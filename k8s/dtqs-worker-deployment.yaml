@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dtqs-worker
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: dtqs-worker
+  template:
+    metadata:
+      labels:
+        app: dtqs-worker
+    spec:
+      containers:
+        - name: dtqs-worker
+#          image: repo/dtqs_worker:latest
+          env:
+            - name: DATABASE_URL
+#              value: "postgres://"
+            - name: RABBITMQ_URL
+#              value: "amqp://rabbitmq"

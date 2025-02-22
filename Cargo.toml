@@ -1,0 +1,37 @@
+[package]
+name = "dtqs"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+warp = "0.3.7"
+serde = { version = "1.0.216", features = ["derive"] }
+serde_json = "1.0.133"
+sqlx = { version = "0.8.2", features = ["postgres", "runtime-tokio-native-tls", "macros"] }
+lapin = "2.5.0"
+tracing = "0.1.41"
+tracing-subscriber = "0.3.19"
+uuid = { version = "1.11.0", features = ["v4"] }
+chrono = "0.4.39"
+tokio = { version = "1.42.0", features = ["macros", "rt-multi-thread", "time"] }
+tokio-retry = "0.3.0"
+anyhow = "1.0.94"
+tui = "0.19.0"
+crossterm = "0.28.1"
+
+[dev-dependencies]
+reqwest = { version = "0.12.9", features = ["json"] }
+tokio-test = "0.4.4"
+
+[[bin]]
+name = "dtqs_api"
+path = "src/main.rs"
+
+[[bin]]
+name = "dtqs_worker"
+path = "src/worker.rs"
+
+[[bin]]
+name = "dtqs_cli"
+path = "src/cli_dashboard.rs"
