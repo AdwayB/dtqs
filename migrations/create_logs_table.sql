@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS logs (
+    id SERIAL PRIMARY KEY,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    worker_node_id VARCHAR(64) NULL,
+    message TEXT NOT NULL
+);

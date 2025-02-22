@@ -1,0 +1,13 @@
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+
+CREATE TABLE IF NOT EXISTS tasks (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    task_type VARCHAR(64) NOT NULL,
+    payload JSONB NOT NULL,
+    status VARCHAR(32) NOT NULL,
+    priority INTEGER NOT NULL DEFAULT 5,
+    progress INTEGER NOT NULL DEFAULT 0,
+    attempts INTEGER NOT NULL DEFAULT 0,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
