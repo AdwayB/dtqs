@@ -11,7 +11,7 @@ pub async fn setup_database(database_url: &str) -> Pool<Postgres> {
 
   MIGRATOR.run(&pool)
     .await
-    .expect("Failed to run database migrations.");
+    .expect("Failed to run database migrations");
   info!("Database migrations complete");
   pool
 }
