@@ -5,3 +5,5 @@ pub mod messaging;
 pub mod routes;
 pub mod worker_scheduler;
 pub mod worker_processing;
+pub mod worker;
+mod cli_dashboard;

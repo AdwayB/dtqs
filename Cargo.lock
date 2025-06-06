@@ -729,6 +729,7 @@ dependencies = [
  "chrono",
  "crossterm 0.28.1",
  "futures",
+ "futures-lite 2.6.0",
  "lapin",
  "regex",
  "reqwest",
